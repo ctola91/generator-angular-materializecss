@@ -3,10 +3,13 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-angular-materializecss using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io), gulp and generator-angular-materializecss using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo
+npm install -g gulp
+npm install -g gulp-connect
+npm install -g connect-history-api-fallback
 npm install -g generator-angular-materializecss
 ```
 

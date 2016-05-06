@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-materializecss",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "generator with angularjs and materializecss",
   "homepage": "https://github.com/cmtp/generator-angular-materializecss",
   "author": {

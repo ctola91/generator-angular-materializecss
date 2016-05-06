@@ -4,7 +4,7 @@
 (function () {
     angular
         .module('app')
-        .filter('toAdd',toAdd);
+        .filter('toUpper',toAdd);
 
     function toAdd() {
         return function(text) {

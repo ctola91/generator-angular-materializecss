@@ -1,0 +1,104 @@
+<nav class="search row">
+    <div class="col s10 input-field">
+        <span>Demo</span>
+    </div>
+    <div class="col s2">
+        <div class="right">
+            <a href="" class="left"><i class="material-icons prefix">view_module</i></a>
+            <a href="" class="left"><i class="material-icons prefix">notifications</i></a>
+            <a href="" class="user-img left"><img src="https://randomuser.me/api/portraits/med/men/37.jpg" class="circle"></a>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col s10 offset-s1 z-depth-1 search">
+        <div class="row search-body">
+            <div class="search-content col s11">
+                <input id="search" type="search"  ng-model="vm.searchText" required>
+            </div>
+            <div class="col s1 search-option">
+                <a href="" ng-click="vm.showAdvance()"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="row hide" id="advanced">
+            <div class="col s4" id="g1">
+                <a class="waves-effect waves-teal btn-flat"><i class="material-icons left">contact_mail</i>From</a>
+                <a class="waves-effect waves-teal btn-flat"><i class="material-icons left">description</i>Subject</a>
+                <a class="waves-effect waves-teal btn-flat"><i class="material-icons left">attachment</i>Files</a>
+            </div>
+            <div class="col s4" id="g2">
+                <a class="waves-effect waves-teal btn-flat" data-activates='demoDropdown' dropdown data-alignment="right" data-constrainwidth="false"><i class="material-icons left">date_range</i>Date Range</a>
+                <a class="waves-effect waves-teal btn-flat" data-activates='dropdownSendTo' dropdown data-alignment="right" data-constrainwidth="false"><i class="material-icons left">email</i>Send To</a>
+                <a class="waves-effect waves-teal btn-flat" data-activates='dropdownTabs' dropdown data-alignment="right" data-constrainwidth="false"><i class="material-icons left">tab</i>Tabs</a>
+            </div>
+            <div class="col s4" id="g3">
+                <a class="waves-effect waves-teal btn-flat"><i class="material-icons left">search</i>Recents</a>
+                <a class="waves-effect waves-teal btn-flat" ng-click="vm.showFormAdvance()"><i class="material-icons left">settings</i>advanced</a>
+            </div>
+        </div>
+        <div class="row hide" id="form-advance">
+            <div class="row">
+                <div class="col s6" input-field>
+                    <input type="text">
+                    <label>From:</label>
+                </div>
+                <div class="col s6" input-field>
+                    <input type="text">
+                    <label>To:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6" input-field>
+                    <input type="text">
+                    <label>Subject:</label>
+                </div>
+                <div class="col s6" input-field>
+                    <input type="text">
+                    <label>Contains:</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s6" input-field>
+                    <input type="text">
+                    <label>No Contains:</label>
+                </div>
+                <div class="col s6" input-field>
+                    <input type="checkbox" id="test5" />
+                    <label for="test5">Contain Files</label>
+                </div>
+            </div>
+            <div class="row">
+                <a href="" class="btn">Search</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <ul class="collection">
+        <li class="collection-item avatar" ng-repeat="item in vm.items | filter: vm.searchText">
+            <img src="{{item.picture.thumbnail}}" alt="" class="circle">
+            <span class="title">{{item.name.first}}</span>
+            <p>{{item.name.last}}<br>
+                {{item.email}}
+            </p>
+            <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+        </li>
+    </ul>
+</div>
+<!-- Dropdowns -->
+<ul id='demoDropdown' class='dropdown-content'>
+    <li><a href="javascript:void(0);"><i class="material-icons left">today</i>Today</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">view_week</i>Week</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">date_range</i>Month</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">view_module</i>Age</a></li>
+</ul>
+<ul id='dropdownSendTo' class='dropdown-content'>
+    <li><a href="javascript:void(0);"><i class="material-icons left">contact_mail</i>CC</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">contact_mail</i>CCO</a></li>
+</ul>
+<ul id='dropdownTabs' class='dropdown-content'>
+    <li><a href="javascript:void(0);"><i class="fa fa-paper-plane left"></i>Received</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">folder</i>Sent</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">folder</i>Unread</a></li>
+    <li><a href="javascript:void(0);"><i class="material-icons left">folder_special</i>Favorites</a></li>
+</ul>

@@ -1,5 +1,5 @@
 # generator-angular-materializecss [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> generator with angularjs and materializecss
+> generator angular-materializecss lets you quickly set up a project with [angularjs](https://angularjs.org/) and [materializecss framework](http://materializecss.com/)
 
 ## Installation
 

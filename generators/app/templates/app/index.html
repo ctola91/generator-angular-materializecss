@@ -16,7 +16,25 @@
 
 </head>
 <body ng-app="app">
+<header>
+    <nav>
+      <ul id="nav-mobile" class="side-nav fixed">
+        <li><a>Welcome materializecss</a></li>
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="user">User</a></li>
+        <li><a ui-sref="option">Options</a></li>
+      </ul>
+      <a href="#" class="button-collapse" data-activates="nav-mobile" data-sidenav="left" data-menuwidth="240" data-closeonclick="false">
+        <i class="mdi-navigation-menu material-icons">menu</i>
+      </a>
+    </nav>
+</header>
+<main>
     <div ui-view></div>
+</main>
+<footer>
+    <div class="row"></div>
+</footer>
     <!-- Javascript -->
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
@@ -27,7 +45,11 @@
     <script src="js/config/app.config.js"></script>
     <script src="js/filters/to.filter.js"></script>
     <script src="js/controllers/home.controller.js"></script>
+    <script src="js/controllers/user.controller.js"></script>
+    <script src="js/controllers/option.controller.js"></script>
     <!-- Javascript UI-->
-
+    <script>
+        //$(".button-collapse").sideNav();
+    </script>
 </body>
 </html>

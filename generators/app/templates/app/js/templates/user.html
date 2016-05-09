@@ -1,6 +1,11 @@
 <div class="row">
   <div class="col s8 offset-s2">
-  <table class="bordered">
+    <h1>Users</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="card col s8 offset-s2">
+  <table class="bordered highlight">
     <thead>
       <tr>
         <th>Name</th>
@@ -8,11 +13,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>{{vm.user.name}}</td>
-        <td>{{vm.user.last}}</td>
+      <tr ng-repeat="item in vm.users">
+        <td>{{item.name}}</td>
+        <td>{{item.last}}</td>
       </tr>
     </tbody>
   </table>
   </div>
-</div>  
+</div>

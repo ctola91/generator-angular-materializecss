@@ -18,6 +18,8 @@
     "angular-material",
     "materializecss",
     "angularjs",
+    "angular material",
+    "materialize",
     "yeoman-generator"
   ],
   "dependencies": {

@@ -19,7 +19,7 @@ Then generate your new project:
 yo angular-materializecss
 ```
 
-Start Project:
+Running Project in [http://localhost:8085](http://localhost:8085):
 
 ```bash
 gulp

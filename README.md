@@ -19,6 +19,12 @@ Then generate your new project:
 yo angular-materializecss
 ```
 
+Start Project:
+
+```bash
+gulp
+```
+
 ## Getting To Know Yeoman
 
  * Yeoman has a heart of gold.

@@ -1,9 +1,14 @@
 /**
  * @author ctola
  */
-
-angular
+(function() {
+  'use strict';
+  
+  angular
     .module('app',[
         'ui.materialize',
-        'ui.router'
+        'ui.router',
+        'ngResource'
     ]);
+
+})();

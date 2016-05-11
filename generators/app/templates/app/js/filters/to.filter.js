@@ -2,11 +2,13 @@
  * @author ctola
  */
 (function () {
+    'use strict';
+    
     angular
         .module('app')
-        .filter('toUpper',toAdd);
+        .filter('toUpper',toUpper);
 
-    function toAdd() {
+    function toUpper() {
         return function(text) {
             if(text != null) {
                 return text.toUpperCase();

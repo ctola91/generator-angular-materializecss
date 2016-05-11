@@ -5,19 +5,18 @@
 </div>
 <div class="row">
   <div class="card col s8 offset-s2">
-  <table class="bordered highlight">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>LastName</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in vm.users">
-        <td>{{item.name}}</td>
-        <td>{{item.last}}</td>
-      </tr>
-    </tbody>
-  </table>
+    <ul>
+      <li ng-repeat="item in vm.contacts">{{item.id}}</li>
+    </ul>
+    <ul class="collection">
+      <li class="collection-item avatar" ng-repeat="item in vm.contacts.results">
+        <img src="{{item.picture.small}}" class="circle">
+        <span class="title">{{item.name.first}}</span>
+        <p>{{item.name.last}} <br>
+           {{item.email}}
+        </p>
+        <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+      </li>
+    </ul>
   </div>
 </div>

@@ -2,30 +2,24 @@
  * @author ctola
  */
 (function() {
+    'use strict';
+
     angular
         .module('app')
         .controller('userController',
-            ['$http', userController]);
+            ['servicesFactory', userController]);
 
-    function userController($http) {
+    function userController(servicesFactory) {
         //vars
         var vm = this;
-        vm.users = [
-        {
-            id: 1,
-          name: "chris",
-          last: "tola"
-        },
-        {
-            id: 2,
-            name: "juan",
-            last: "Perez"
-        },
-        {
-            id: 3,
-            name: "deep",
-            last: "blue"
+        vm.contacts = {};
+        vm.userList = userList;
+        //code
+        vm.userList();
+        
+        //functions
+        function userList () {
+             vm.contacts = servicesFactory.query();
         }
-        ]
     }
 })();

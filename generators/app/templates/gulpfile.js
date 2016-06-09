@@ -4,7 +4,9 @@
 var gulp = require("gulp"),
     connect = require("gulp-connect"),
     historyApiFallback = require("connect-history-api-fallback"),
-    sass = require("gulp-sass");
+    sass = require("gulp-sass"),
+    concat = require('gulp-concat'),
+    sourcemaps = require('gulp-sourcemaps');
 
 // 1. Servidor web de desarrollo
 gulp.task('server', function() {
@@ -21,7 +23,9 @@ gulp.task('server', function() {
 /*recargar sass*/
 gulp.task('sass', function () {
     return gulp.src('./app/sass/**/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./app/css'))
         .pipe(connect.reload());
 });
@@ -40,6 +44,13 @@ gulp.task('js', function() {
 gulp.task('html', function() {
     gulp.src('./app/**/*.html')
         .pipe(connect.reload());
+});
+gulp.task('minified', function() {
+    return gulp.src('./app/js/**/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('app.min.js'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./app/dist'));
 });
 /*inspector que escucha los cambios en los css y html*/
 gulp.task('watch', function() {

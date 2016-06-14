@@ -24,6 +24,14 @@ Running Project in [http://localhost:8085](http://localhost:8085):
 ```bash
 gulp
 ```
+## Gulp Tasks
+
+```bash
+gulp sass // compile sass files
+gulp minify-css // minify css files
+gulp minify-html //minify html files
+gulp minify-js // minify js files
+```
 
 ## Getting To Know Yeoman
 

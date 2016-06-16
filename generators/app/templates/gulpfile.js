@@ -10,7 +10,7 @@ var gulp = require("gulp"),
     cleanCSS = require('gulp-clean-css')
     uglify = require('gulp-uglify')
     htmlmin = require('gulp-htmlmin')
-    mainBowerFiles = require('main-bower-files');
+    lib = require('bower-files')();
 
 // 1. Servidor web de desarrollo
 gulp.task('server', function() {
@@ -73,11 +73,29 @@ gulp.task('minify-css', function() {
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/css'));
 });
-/*move bower components to build project*/
-gulp.task('build-bower', function() {
-    return gulp.src(mainBowerFiles(), { base: '.app/bower_components' })
-    .pipe(gulp.dest('./dist/bower_components'));
+/*mover librerias de bower al proyecto*/
+gulp.task('bower-js', function() {
+    gulp.src(lib.ext('js').files)
+    .pipe(gulp.dest('./app/lib/js'));
 });
+/*Mover Librerias de bower al proyecto*/
+gulp.task('bower-css', function() {
+    gulp.src(lib.ext('css').files)
+    .pipe(gulp.dest('./app/lib/css'));
+});
+/*move bower components to build js*/
+gulp.task('bower-min-js', function() {
+    gulp.src(lib.ext('js').files)
+    .pipe(uglify())
+    .pipe(gulp.dest('./dist/lib/js'));
+});
+/*move bower components to build css*/
+gulp.task('bower-min-css', function() {
+    gulp.src(lib.ext('css').files)
+    .pipe(cleanCSS())
+    .pipe(gulp.dest('./dist/lib/css'));
+});
+
 /*inspector que escucha los cambios en los css y html*/
 gulp.task('watch', function() {
     gulp.watch(['./app/**/*.html'], ['html']);
@@ -87,10 +105,10 @@ gulp.task('watch', function() {
 });
 /* Compilar y minificar archivos para colocar en produccion */
 gulp.task('build',
-          ['minify-html', 'minify-css', 'minify-js']
+          ['minify-html', 'minify-css', 'minify-js', 'bower-min-js', 'bower-min-css']
          );
 
 /*tareas por defecto*/
 gulp.task('default',
-    ['server', 'watch']
+    ['bower-css', 'bower-js', 'server', 'watch']
 );

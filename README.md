@@ -27,10 +27,12 @@ gulp
 ## Gulp Tasks
 
 ```bash
-gulp sass // compile sass files
-gulp minify-css // minify css files
-gulp minify-html //minify html files
-gulp minify-js // minify js files
+gulp                // server livereload http://localhost:8085
+gulp sass           // compile sass files
+gulp minify-css     // minify css files
+gulp minify-html    //minify html files
+gulp minify-js      // minify js files
+gulp build          // compile and minify project to production
 ```
 
 ## Getting To Know Yeoman

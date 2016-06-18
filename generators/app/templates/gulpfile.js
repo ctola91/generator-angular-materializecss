@@ -49,6 +49,11 @@ gulp.task('html', function() {
     gulp.src('./app/**/*.html')
         .pipe(connect.reload());
 });
+/*copy Roboto fonts*/
+gulp.task('copyfonts', function() {
+  gulp.src('./bower_components/materialize/fonts/**/*.{ttf,woff,woff2,eot,eof,svg}').pipe(gulp.dest('./app/lib/fonts'));
+});
+
 /*minificar html*/
 gulp.task('minify-html', function() {
     return gulp.src('./app/**/*.html')
@@ -110,5 +115,5 @@ gulp.task('build',
 
 /*tareas por defecto*/
 gulp.task('default',
-    ['bower-css', 'bower-js', 'server', 'watch']
+    ['bower-css', 'bower-js', 'copyfonts', 'server', 'watch']
 );

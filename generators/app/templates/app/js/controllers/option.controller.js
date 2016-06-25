@@ -4,11 +4,11 @@
 (function() {
     angular
         .module('app')
-        .controller('optionController',
-            ['$http', optionController]);
+        .controller('OptionController',OptionController);
 
-    function optionController($http) {
+    function OptionController() {
         //vars
+        /* jshint validthis: true */
         var vm = this;
         vm.options = ["home","user","contact","find","help"];
     }

@@ -10,7 +10,7 @@
 
     function toUpper() {
         return function(text) {
-            if(text != null) {
+            if(text !== null) {
                 return text.toUpperCase();
             }
         }

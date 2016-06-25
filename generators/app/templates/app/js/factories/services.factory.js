@@ -3,10 +3,12 @@
 
   angular
     .module('app')
-    .factory('servicesFactory', ['$resource', servicesFactory]);
+    .factory('servicesFactory', servicesFactory);
+  
+  servicesFactory.$inject = ['$resource'];
 
   function servicesFactory($resource) {
-    return $resource('http://api.randomuser.me/?page=1&results=10',{},{
+    return $resource('http://api.randomuser.me/?results=10',{},{
       query: {method: 'get', params:{}}
     });
   }

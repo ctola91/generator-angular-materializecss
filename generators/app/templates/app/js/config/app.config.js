@@ -5,6 +5,8 @@ angular
     .module("app")
     .config(appConfig);
 
+appConfig.$inject =['$stateProvider', '$urlRouterProvider'];
+
 function appConfig($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/home");
 
@@ -12,16 +14,16 @@ function appConfig($stateProvider, $urlRouterProvider) {
         .state('home', {
             url: '/home',
             templateUrl: "views/home.html",
-            controller: "homeController as vm"
+            controller: "HomeController as vm"
         })
         .state('user', {
             url: '/user',
             templateUrl: "views/user.html",
-            controller: "userController as vm"
+            controller: "UserController as vm"
         })
         .state('option', {
             url: '/option',
             templateUrl: "views/option.html",
-            controller: "optionController as vm"
+            controller: "OptionController as vm"
         });
 }

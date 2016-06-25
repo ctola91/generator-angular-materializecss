@@ -6,11 +6,14 @@
 
     angular
         .module('app')
-        .controller('userController',
-            ['servicesFactory', userController]);
+        .controller('UserController',
+            ['servicesFactory', UserController]);
 
-    function userController(servicesFactory) {
+    UserController.$inject = ['servicesFactory'];
+    
+    function UserController(servicesFactory) {
         //vars
+        /* jshint validthis: true */
         var vm = this;
         vm.contacts = {};
         vm.userList = userList;

@@ -20,7 +20,9 @@
     "angularjs",
     "angular material",
     "materialize",
+    "angular materialize",
     "yeoman-generator"
+    
   ],
   "dependencies": {
     "yeoman-generator": "^0.22.0",

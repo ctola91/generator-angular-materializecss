@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-materializecss",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "generator with angularjs and materializecss",
   "homepage": "https://github.com/cmtp/generator-angular-materializecss",
   "author": {
@@ -22,7 +22,6 @@
     "materialize",
     "angular materialize",
     "yeoman-generator"
-    
   ],
   "dependencies": {
     "yeoman-generator": "^0.23.4",

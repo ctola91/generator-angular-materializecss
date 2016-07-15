@@ -106,7 +106,6 @@ gulp.task('watch', function() {
     gulp.watch(['./app/**/*.html'], ['html']);
     gulp.watch(['./app/js/**/*.js'], ['js']);
     gulp.watch('./app/sass/**/*.scss', ['sass']);
-    gulp.watch(['./app/css/**/*.css'], ['css']);
 });
 /* Compilar y minificar archivos para colocar en produccion */
 gulp.task('build',

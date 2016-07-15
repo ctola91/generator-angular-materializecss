@@ -6,10 +6,10 @@ var gulp = require("gulp"),
     historyApiFallback = require("connect-history-api-fallback"),
     sass = require("gulp-sass"),
     concat = require('gulp-concat'),
-    sourcemaps = require('gulp-sourcemaps')
-    cleanCSS = require('gulp-clean-css')
-    uglify = require('gulp-uglify')
-    htmlmin = require('gulp-htmlmin')
+    sourcemaps = require('gulp-sourcemaps'),
+    cleanCSS = require('gulp-clean-css'),
+    uglify = require('gulp-uglify'),
+    htmlmin = require('gulp-htmlmin'),
     lib = require('bower-files')();
 
 // 1. Servidor web de desarrollo
@@ -58,7 +58,7 @@ gulp.task('copyfonts', function() {
 gulp.task('minify-html', function() {
     return gulp.src('./app/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('./dist'))
+        .pipe(gulp.dest('./dist'));
 });
 
 /* minificar y encriptar js */

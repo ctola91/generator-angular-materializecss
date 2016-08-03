@@ -12,7 +12,7 @@ describe('generator-angular-materializecss:app', function () {
 
   it('creates files', function () {
     assert.file([
-      'dummyfile.txt'
+      'app/*'
     ]);
   });
 });
